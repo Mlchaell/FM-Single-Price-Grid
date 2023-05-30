@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+  /* COLORS */
+  --clr-cyan: hsl(179, 62%, 43%);
+  --clr-yellow: hsl(71, 73%, 54%);
+  --clr-gray: hsl(204, 43%, 93%);
+  --clr-yellow-blue: hsl(218, 22%, 67%);
+
+  /* FONTS */
+  --fw-reg: 400;
+  --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 62.5%; /* 1rem = 10px */
+  font-family: 'Karla', sans-serif;
+  height: 100%;
+}
+
+body {
+  background-color: var(--clr-dark-blue-main);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+/*************************/
+/* General Styling */
+
+body {
+  display: grid;
+  place-content: center;
+  background-color: var(--clr-gray);
+}
+
+.cards {
+  display: grid;
+  grid-template-areas: "join join"
+                       "sub why";
+  max-width: 50rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 0 2rem;
+}
+
+@media only screen and (max-width: 25rem) {
+  .cards {
+    grid-template-areas: "join"
+                         "sub"
+                         "why";
+  }
+}
+
+/*************************/
+/* Join Card */
+
+.cards__join {
+  grid-area: join;
+  background-color: #fff;
+}
+
+.cards__join-title {
+  font-size: 2.4rem;
+  color: var(--clr-cyan)
+}
+
+.cards__join-sub {
+  font-size: 1.4rem;
+  color: var(--clr-yellow);
+}
+
+.cards__join-info {
+  font-size: 1.2rem;
+  color: #9AA7BE;
+}
+
+/*************************/
+/* Subscription Card */
+
+.cards__subscription {
+  grid-area: sub;
+  background-color: var(--clr-cyan);
+  filter: brightness(.9);
+  color: #fff;
+}
+
+.cards__subscription-price {
+  font-size: 3.2rem;
+}
+
+.cards__subscription-price--txt {
+  font-size: 1.6rem;
+  color: #ffffffa2;
+}
+
+.cards__subscription-info {
+  font-size: 1.4rem;
+}
+
+.cards__subscription-btn {
+  border: none;
+  border-radius: .6rem;
+  background-color: var(--clr-yellow);
+  padding: 1rem;
+
+  font-size: 1.6rem;
+  color: #fff;
+
+  transition: filter .2s;
+}
+
+.cards__subscription-btn:hover {
+  filter: brightness(.9);
+}
+
+/*************************/
+/* Why Us Card */
+
+.cards__why {
+  grid-area: why;
+  background-color: var(--clr-cyan);
+}
+
+.cards__why-info {
+  font-size: 1.2rem;
+  color: #ffffffa2;
+}
+
+/*************************/
+/* Helper CLasses */
+
+.heading-2 {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 2rem;
+}
